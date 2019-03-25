@@ -79,17 +79,21 @@
 
 
 
-<meta name="description" content="这个博客仅用于个人对网络安全的学习记录 一.目前博主常用的学习网站有： 实验楼：www.shiyanlou.com 菜鸟教程：www.runoob.com     二.题库： We Chall:www.wechall.net">
+<meta name="description" content="1. PHP LFI题目要求：调用soulution.php文件本题是PHP中LFI漏洞的利用，漏洞代码如下:  $filename = ‘pages/‘.(isset($_GET[“file”])?$_GET[“file”]:”welcome”).‘.htm’;include $filename;  当服务器端get到file的时候，会去调用file.html并显示；那么我们只要将solutio">
 <meta property="og:type" content="article">
-<meta property="og:title" content="简介">
-<meta property="og:url" content="http://yoursite.com/2019/03/25/简介/index.html">
+<meta property="og:title" content="PHP 解题报告">
+<meta property="og:url" content="http://yoursite.com/2019/03/25/PHP解题报告/index.html">
 <meta property="og:site_name" content="nightraid_yyf的博客">
-<meta property="og:description" content="这个博客仅用于个人对网络安全的学习记录 一.目前博主常用的学习网站有： 实验楼：www.shiyanlou.com 菜鸟教程：www.runoob.com     二.题库： We Chall:www.wechall.net">
+<meta property="og:description" content="1. PHP LFI题目要求：调用soulution.php文件本题是PHP中LFI漏洞的利用，漏洞代码如下:  $filename = ‘pages/‘.(isset($_GET[“file”])?$_GET[“file”]:”welcome”).‘.htm’;include $filename;  当服务器端get到file的时候，会去调用file.html并显示；那么我们只要将solutio">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-03-25T11:40:16.238Z">
+<meta property="og:image" content="http://yoursite.com/images/php_1.png">
+<meta property="og:image" content="http://yoursite.com/images/php_2.png">
+<meta property="og:image" content="http://yoursite.com/images/php_3.png">
+<meta property="og:updated_time" content="2019-03-25T11:31:33.796Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="简介">
-<meta name="twitter:description" content="这个博客仅用于个人对网络安全的学习记录 一.目前博主常用的学习网站有： 实验楼：www.shiyanlou.com 菜鸟教程：www.runoob.com     二.题库： We Chall:www.wechall.net">
+<meta name="twitter:title" content="PHP 解题报告">
+<meta name="twitter:description" content="1. PHP LFI题目要求：调用soulution.php文件本题是PHP中LFI漏洞的利用，漏洞代码如下:  $filename = ‘pages/‘.(isset($_GET[“file”])?$_GET[“file”]:”welcome”).‘.htm’;include $filename;  当服务器端get到file的时候，会去调用file.html并显示；那么我们只要将solutio">
+<meta name="twitter:image" content="http://yoursite.com/images/php_1.png">
 
 
 
@@ -119,13 +123,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/03/25/简介/">
+  <link rel="canonical" href="http://yoursite.com/2019/03/25/PHP解题报告/">
 
 
 
 
 
-  <title>简介 | nightraid_yyf的博客</title>
+  <title>PHP 解题报告 | nightraid_yyf的博客</title>
   
 
 
@@ -232,7 +236,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/25/简介/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/25/PHP解题报告/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="nightraid_yyf">
@@ -249,7 +253,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">简介</h1>
+          <h1 class="post-title" itemprop="name headline">PHP 解题报告</h1>
         
 
         <div class="post-meta">
@@ -261,7 +265,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-25T12:37:26+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-25T18:24:50+08:00">
                 2019-03-25
               </time>
             
@@ -284,8 +288,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/INFO/" itemprop="url" rel="index">
-                    <span itemprop="name">INFO</span>
+                  <a href="/categories/PHP类/" itemprop="url" rel="index">
+                    <span itemprop="name">PHP类</span>
                   </a>
                 </span>
 
@@ -321,19 +325,28 @@
       
 
       
-        <h2 id="这个博客仅用于个人对网络安全的学习记录"><a href="#这个博客仅用于个人对网络安全的学习记录" class="headerlink" title="这个博客仅用于个人对网络安全的学习记录"></a>这个博客仅用于个人对网络安全的学习记录</h2><ul>
-<li>一.目前博主常用的学习网站有：<ol>
-<li>实验楼：<a href="http://www.shiyanlou.com" target="_blank" rel="noopener">www.shiyanlou.com</a></li>
-<li>菜鸟教程：<a href="http://www.runoob.com" target="_blank" rel="noopener">www.runoob.com</a></li>
-</ol>
-</li>
-</ul>
-<ul>
-<li>二.题库：<ol>
-<li>We Chall:<a href="http://www.wechall.net" target="_blank" rel="noopener">www.wechall.net</a></li>
-</ol>
-</li>
-</ul>
+        <h2 id="1-PHP-LFI"><a href="#1-PHP-LFI" class="headerlink" title="1. PHP LFI"></a>1. <a href="http://www.wechall.net/challenge/training/php/lfi/up/index.php" target="_blank" rel="noopener">PHP LFI</a></h2><p>题目要求：调用soulution.php文件<br>本题是PHP中LFI漏洞的利用，漏洞代码如下:</p>
+<blockquote>
+<p>$filename = ‘pages/‘.(isset($_GET[“file”])?$_GET[“file”]:”welcome”).‘.htm’;<br><br>include $filename;</p>
+</blockquote>
+<p>当服务器端get到file的时候，会去调用file.html并显示；那么我们只要将solution.php传入并调用就好。<br><br>那么我们尝试输入</p>
+<blockquote>
+<p>?file=solution.php<br></p>
+</blockquote>
+<p>我们发现返回的是solution.php.html</p>
+<p><img src="/images/php_1.png" alt></p>
+<p>而我们需要的是solution.php这里就需要用到php的截断符%0，此时输入的代码为</p>
+<blockquote>
+<p>?file=solution.php%%0(%%转义为%)</p>
+</blockquote>
+<p>此时返回的就是solution.php</p>
+<p><img src="/images/php_2.png" alt></p>
+<p>修改下路径</p>
+<blockquote>
+<p>?file=../../solution.php%%0</p>
+</blockquote>
+<p>得到正确答案</p>
+<p><img src="/images/php_3.png" alt></p>
 
       
     </div>
@@ -358,15 +371,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2019/03/25/简介/" rel="next" title="简介">
+                <i class="fa fa-chevron-left"></i> 简介
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/03/25/PHP解题报告/" rel="prev" title="PHP 解题报告">
-                PHP 解题报告 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -489,7 +502,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#这个博客仅用于个人对网络安全的学习记录"><span class="nav-number">1.</span> <span class="nav-text">这个博客仅用于个人对网络安全的学习记录</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-PHP-LFI"><span class="nav-number">1.</span> <span class="nav-text">1. PHP LFI</span></a></li></ol></div>
             
 
           </div>
