@@ -388,6 +388,187 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/25/PHP解题报告/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="nightraid_yyf">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="nightraid_yyf的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/25/PHP解题报告/" itemprop="url">PHP 解题报告</a></h1>
+        
+
+        <div class="post-meta">
+			
+            <i class="fa fa-thumb-tack"></i>
+            <font color="7D26CD">置顶</font>
+            <span class="post-meta-divider">|</span>
+			
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-25T18:24:50+08:00">
+                2019-03-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/PHP类/" itemprop="url" rel="index">
+                    <span itemprop="name">PHP类</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="1-PHP-LFI"><a href="#1-PHP-LFI" class="headerlink" title="1. PHP LFI"></a>1. <a href="http://www.wechall.net/challenge/training/php/lfi/up/index.php" target="_blank" rel="noopener">PHP LFI</a></h2><p>题目要求：调用soulution.php文件<br>本题是PHP中LFI漏洞的利用，漏洞代码如下:</p>
+<blockquote>
+<p>$filename = ‘pages/‘.(isset($_GET[“file”])?$_GET[“file”]:”welcome”).‘.htm’;<br><br>include $filename;</p>
+</blockquote>
+<p>当服务器端get到file的时候，会去调用file.html并显示；那么我们只要将solution.php传入并调用就好。<br><br>那么我们尝试输入</p>
+<blockquote>
+<p>?file=solution.php<br></p>
+</blockquote>
+<p>我们发现返回的是solution.php.html</p>
+<p><img src="/images/php_1.png" alt></p>
+<p>而我们需要的是solution.php这里就需要用到php的截断符%0，此时输入的代码为</p>
+<blockquote>
+<p>?file=solution.php%%0(%%转义为%)</p>
+</blockquote>
+<p>此时返回的就是solution.php</p>
+<p><img src="/images/php_2.png" alt></p>
+<p>修改下路径</p>
+<blockquote>
+<p>?file=../../solution.php%%0</p>
+</blockquote>
+<p>得到正确答案</p>
+<p><img src="/images/php_3.png" alt></p>
+<h2 id="2-PHP-0817"><a href="#2-PHP-0817" class="headerlink" title="2.PHP 0817"></a>2.<a href="http://www.wechall.net/challenge/php0817/index.php" target="_blank" rel="noopener">PHP 0817</a></h2><p>首先我们看看PHP代码</p>
+<p><img src="/images/PHP0817.png" alt></p>
+<p>发现我们只要修改which的值就可以获得“which.php”文件，我们的目标是获得solution.php文件，故输入</p>
+<blockquote>
+<p>?which=solution</p>
+</blockquote>
+<p>此题解开</p>
+<h2 id="3-Register-Globals"><a href="#3-Register-Globals" class="headerlink" title="3.Register Globals"></a>3.<a href="http://www.wechall.net/challenge/training/php/globals/index.php" target="_blank" rel="noopener">Register Globals</a></h2><p>本题是利用PHP的register_globals漏洞来进行解题,当设置regiter_globals = on 时会将客户端和代码内部的变量混合在一起<br><br>本题的PHP代码就已经设置了register_globals，题目要求我们以admin的账号登陆，查看其PHP代码</p>
+<p><img src="/images/RegisterGlobal.png" alt></p>
+<p>从这段代码中可以看到只要我们把login[0]这个变量的值设置为’admin’我们就可以以admin的账号登陆。因为register_globals被设置成on，所以我们只要以get的方式给服务器传递login[0]即可修改对应变量，代码:</p>
+<blockquote>
+<p>?login[0]=admin</p>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/27/信息竞赛/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -509,183 +690,6 @@
 <p>C.设置文件夹选项，显示文件名的扩展名</p>
 <p>D.不要打开扩展名为VBS、SHS、PIF等邮件附件</p>
 <h1 id="试卷"><a href="#试卷" class="headerlink" title="试卷"></a>试卷</h1><p><a href="https://pan.baidu.com/s/1aFt4YXmY8V6gPE1I65noKQ" target="_blank" rel="noopener">计算机网络安全技术试卷,提取码：kkxf</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/25/PHP解题报告/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="nightraid_yyf">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="nightraid_yyf的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/25/PHP解题报告/" itemprop="url">PHP 解题报告</a></h1>
-        
-
-        <div class="post-meta">
-			
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-25T18:24:50+08:00">
-                2019-03-25
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/PHP类/" itemprop="url" rel="index">
-                    <span itemprop="name">PHP类</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="1-PHP-LFI"><a href="#1-PHP-LFI" class="headerlink" title="1. PHP LFI"></a>1. <a href="http://www.wechall.net/challenge/training/php/lfi/up/index.php" target="_blank" rel="noopener">PHP LFI</a></h2><p>题目要求：调用soulution.php文件<br>本题是PHP中LFI漏洞的利用，漏洞代码如下:</p>
-<blockquote>
-<p>$filename = ‘pages/‘.(isset($_GET[“file”])?$_GET[“file”]:”welcome”).‘.htm’;<br><br>include $filename;</p>
-</blockquote>
-<p>当服务器端get到file的时候，会去调用file.html并显示；那么我们只要将solution.php传入并调用就好。<br><br>那么我们尝试输入</p>
-<blockquote>
-<p>?file=solution.php<br></p>
-</blockquote>
-<p>我们发现返回的是solution.php.html</p>
-<p><img src="/images/php_1.png" alt></p>
-<p>而我们需要的是solution.php这里就需要用到php的截断符%0，此时输入的代码为</p>
-<blockquote>
-<p>?file=solution.php%%0(%%转义为%)</p>
-</blockquote>
-<p>此时返回的就是solution.php</p>
-<p><img src="/images/php_2.png" alt></p>
-<p>修改下路径</p>
-<blockquote>
-<p>?file=../../solution.php%%0</p>
-</blockquote>
-<p>得到正确答案</p>
-<p><img src="/images/php_3.png" alt></p>
-<h2 id="2-PHP-0817"><a href="#2-PHP-0817" class="headerlink" title="2.PHP 0817"></a>2.<a href="http://www.wechall.net/challenge/php0817/index.php" target="_blank" rel="noopener">PHP 0817</a></h2><p>首先我们看看PHP代码</p>
-<p><img src="/images/PHP0817.png" alt></p>
-<p>发现我们只要修改which的值就可以获得“which.php”文件，我们的目标是获得solution.php文件，故输入</p>
-<blockquote>
-<p>?which=solution</p>
-</blockquote>
-<p>此题解开</p>
-<h2 id="3-Register-Globals"><a href="#3-Register-Globals" class="headerlink" title="3.Register Globals"></a>3.<a href="http://www.wechall.net/challenge/training/php/globals/index.php" target="_blank" rel="noopener">Register Globals</a></h2><p>本题是利用PHP的register_globals漏洞来进行解题,当设置regiter_globals = on 时会将客户端和代码内部的变量混合在一起<br><br>本题的PHP代码就已经设置了register_globals，题目要求我们以admin的账号登陆，查看其PHP代码</p>
-<p><img src="/images/RegisterGlobal.png" alt></p>
-<p>从这段代码中可以看到只要我们把login[0]这个变量的值设置为’admin’我们就可以以admin的账号登陆。因为register_globals被设置成on，所以我们只要以get的方式给服务器传递login[0]即可修改对应变量，代码:</p>
-<blockquote>
-<p>?login[0]=admin</p>
-</blockquote>
 
           
         
