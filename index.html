@@ -329,20 +329,19 @@
           
             <h2 id="这个博客仅用于个人对网络安全的学习记录"><a href="#这个博客仅用于个人对网络安全的学习记录" class="headerlink" title="这个博客仅用于个人对网络安全的学习记录"></a>这个博客仅用于个人对网络安全的学习记录</h2><ul>
 <li>一.目前博主常用的学习网站有：<ol>
-<li><a href="www.shiyanlou.com">实验楼</a></li>
-<li><a href="www.runoob.com">菜鸟教程</a></li>
+<li><a href="https://www.shiyanlou.com" target="_blank">实验楼</a></li>
+<li><a href="http://www.runoob.com" target="_blank">菜鸟教程</a></li>
 </ol>
 </li>
 </ul>
+<p><br></p>
 <ul>
-<li><p>二.题库：</p>
-<ol>
-<li><a href="www.wechall.net">We Chall</a></li>
+<li>二.题库：<ol>
+<li><a href="http://www.wechall.net" target="_blank">We Chall</a><br><br></li>
 </ol>
 </li>
-<li><p>三.实用网站</p>
-<ol>
-<li><a href="http://no2.php.net/manual/zh/index.php" target="_blank" rel="noopener">PHP手册</a></li>
+<li>三.实用网站<ol>
+<li><a href="http://no2.php.net/manual/zh/index.php" target="_blank">PHP手册</a><br><br></li>
 </ol>
 </li>
 </ul>
@@ -492,7 +491,7 @@
       
         
           
-            <h2 id="1-PHP-LFI"><a href="#1-PHP-LFI" class="headerlink" title="1. PHP LFI"></a>1. <a href="http://www.wechall.net/challenge/training/php/lfi/up/index.php" target="_blank" rel="noopener">PHP LFI</a></h2><p>题目要求：调用soulution.php文件<br>本题是PHP中LFI漏洞的利用，漏洞代码如下:</p>
+            <h2 id="1-PHP-LFI"><a href="#1-PHP-LFI" class="headerlink" title="1. PHP LFI"></a>1. <a href="http://www.wechall.net/challenge/training/php/lfi/up/index.php" target="_blank">PHP LFI</a></h2><p>题目要求：调用soulution.php文件<br>本题是PHP中LFI漏洞的利用，漏洞代码如下:</p>
 <blockquote>
 <p>$filename = ‘pages/‘.(isset($_GET[“file”])?$_GET[“file”]:”welcome”).‘.htm’;<br><br>include $filename;</p>
 </blockquote>
@@ -514,14 +513,14 @@
 </blockquote>
 <p>得到正确答案</p>
 <p><img src="/images/php_3.png" alt></p>
-<h2 id="2-PHP-0817"><a href="#2-PHP-0817" class="headerlink" title="2.PHP 0817"></a>2.<a href="http://www.wechall.net/challenge/php0817/index.php" target="_blank" rel="noopener">PHP 0817</a></h2><p>首先我们看看PHP代码</p>
+<h2 id="2-PHP-0817"><a href="#2-PHP-0817" class="headerlink" title="2. PHP 0817"></a>2. <a href="http://www.wechall.net/challenge/php0817/index.php" target="_blank">PHP 0817</a></h2><p>首先我们看看PHP代码</p>
 <p><img src="/images/PHP0817.png" alt></p>
 <p>发现我们只要修改which的值就可以获得“which.php”文件，我们的目标是获得solution.php文件，故输入</p>
 <blockquote>
 <p>?which=solution</p>
 </blockquote>
 <p>此题解开</p>
-<h2 id="3-Register-Globals"><a href="#3-Register-Globals" class="headerlink" title="3.Register Globals"></a>3.<a href="http://www.wechall.net/challenge/training/php/globals/index.php" target="_blank" rel="noopener">Register Globals</a></h2><p>本题是利用PHP的register_globals漏洞来进行解题,当设置regiter_globals = on 时会将客户端和代码内部的变量混合在一起<br><br>本题的PHP代码就已经设置了register_globals，题目要求我们以admin的账号登陆，查看其PHP代码</p>
+<h2 id="3-Register-Globals"><a href="#3-Register-Globals" class="headerlink" title="3.Register Globals"></a>3.<a href="http://www.wechall.net/challenge/training/php/globals/index.php" target="_blank">Register Globals</a></h2><p>本题是利用PHP的register_globals漏洞来进行解题,当设置regiter_globals = on 时会将客户端和代码内部的变量混合在一起<br><br>本题的PHP代码就已经设置了register_globals，题目要求我们以admin的账号登陆，查看其PHP代码</p>
 <p><img src="/images/RegisterGlobal.png" alt></p>
 <p>从这段代码中可以看到只要我们把login[0]这个变量的值设置为’admin’我们就可以以admin的账号登陆。因为register_globals被设置成on，所以我们只要以get的方式给服务器传递login[0]即可修改对应变量，代码:</p>
 <blockquote>
