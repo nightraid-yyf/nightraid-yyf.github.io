@@ -89,7 +89,9 @@
 <meta property="og:image" content="http://yoursite.com/images/php_1.png">
 <meta property="og:image" content="http://yoursite.com/images/php_2.png">
 <meta property="og:image" content="http://yoursite.com/images/php_3.png">
-<meta property="og:updated_time" content="2019-03-25T11:31:33.796Z">
+<meta property="og:image" content="http://yoursite.com/images/PHP0817.png">
+<meta property="og:image" content="http://yoursite.com/images/RegisterGlobal.png">
+<meta property="og:updated_time" content="2019-03-28T10:59:55.648Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PHP 解题报告">
 <meta name="twitter:description" content="1. PHP LFI题目要求：调用soulution.php文件本题是PHP中LFI漏洞的利用，漏洞代码如下:  $filename = ‘pages/‘.(isset($_GET[“file”])?$_GET[“file”]:”welcome”).‘.htm’;include $filename;  当服务器端get到file的时候，会去调用file.html并显示；那么我们只要将solutio">
@@ -348,6 +350,19 @@
 </blockquote>
 <p>得到正确答案</p>
 <p><img src="/images/php_3.png" alt></p>
+<h2 id="2-PHP-0817"><a href="#2-PHP-0817" class="headerlink" title="2.PHP 0817"></a>2.<a href="http://www.wechall.net/challenge/php0817/index.php" target="_blank" rel="noopener">PHP 0817</a></h2><p>首先我们看看PHP代码</p>
+<p><img src="/images/PHP0817.png" alt></p>
+<p>发现我们只要修改which的值就可以获得“which.php”文件，我们的目标是获得solution.php文件，故输入</p>
+<blockquote>
+<p>?which=solution</p>
+</blockquote>
+<p>此题解开</p>
+<h2 id="3-Register-Globals"><a href="#3-Register-Globals" class="headerlink" title="3.Register Globals"></a>3.<a href="http://www.wechall.net/challenge/training/php/globals/index.php" target="_blank" rel="noopener">Register Globals</a></h2><p>本题是利用PHP的register_globals漏洞来进行解题,当设置regiter_globals = on 时会将客户端和代码内部的变量混合在一起<br><br>本题的PHP代码就已经设置了register_globals，题目要求我们以admin的账号登陆，查看其PHP代码</p>
+<p><img src="/images/RegisterGlobal.png" alt></p>
+<p>从这段代码中可以看到只要我们把login[0]这个变量的值设置为’admin’我们就可以以admin的账号登陆。因为register_globals被设置成on，所以我们只要以get的方式给服务器传递login[0]即可修改对应变量，代码:</p>
+<blockquote>
+<p>?login[0]=admin</p>
+</blockquote>
 
       
     </div>
@@ -507,7 +522,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-PHP-LFI"><span class="nav-number">1.</span> <span class="nav-text">1. PHP LFI</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-PHP-LFI"><span class="nav-number">1.</span> <span class="nav-text">1. PHP LFI</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-PHP-0817"><span class="nav-number">2.</span> <span class="nav-text">2.PHP 0817</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-Register-Globals"><span class="nav-number">3.</span> <span class="nav-text">3.Register Globals</span></a></li></ol></div>
             
 
           </div>
