@@ -543,6 +543,14 @@
 <p>-- ‘</p>
 </blockquote>
 <p>这样 ‘ 就被正确注释了</p>
+<h2 id="5-PHP-0818"><a href="#5-PHP-0818" class="headerlink" title="5.PHP 0818"></a>5.<a href="http://www.wechall.net/challenge/noother/php0818/php0818.php" target="_blank">PHP 0818</a></h2><p>本题是输入一个正确的magic word来获得正解，是对PHP表达式的考察</p>
+<p>看一下PHP代码</p>
+<p><img src="/images/PHP_0818.png" alt></p>
+<p>可见代码过滤了1-9之间的数字没有过滤0，而3735929054的十六进制代码</p>
+<blockquote>
+<p>0xdeadc0de</p>
+</blockquote>
+<p>正好不含有1-9<br>故post 0xdeadc0de 得解</p>
 
           
         
