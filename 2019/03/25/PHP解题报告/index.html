@@ -91,7 +91,8 @@
 <meta property="og:image" content="http://yoursite.com/images/php_3.png">
 <meta property="og:image" content="http://yoursite.com/images/PHP0817.png">
 <meta property="og:image" content="http://yoursite.com/images/RegisterGlobal.png">
-<meta property="og:updated_time" content="2019-03-28T12:13:49.806Z">
+<meta property="og:image" content="http://yoursite.com/images/NoEscape_1.png">
+<meta property="og:updated_time" content="2019-04-06T05:53:16.460Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PHP 解题报告">
 <meta name="twitter:description" content="1. PHP LFI题目要求：调用soulution.php文件本题是PHP中LFI漏洞的利用，漏洞代码如下:  $filename = ‘pages/‘.(isset($_GET[“file”])?$_GET[“file”]:”welcome”).‘.htm’;include $filename;  当服务器端get到file的时候，会去调用file.html并显示；那么我们只要将solutio">
@@ -367,6 +368,23 @@
 <blockquote>
 <p>?login[0]=admin</p>
 </blockquote>
+<h2 id="4-No-Escape"><a href="#4-No-Escape" class="headerlink" title="4.No Escape"></a>4.<a href="http://www.wechall.net/challenge/no_escape/index.php" target="_blank">No Escape</a></h2><p>本题是对sql注入的简单利用，目的是让一个人的投票数变为111，首先我们看PHP代码：</p>
+<p><img src="/images/NoEscape_1.png" alt></p>
+<p>这段代码是利用sql语句对 who 这个变量进行赋值，who=getGET(‘vote_for’),并且没有做任何的过滤，那么我们就来进行简单的sql注入</p>
+<blockquote>
+<p>?vote_for=bill`=111--+</p>
+</blockquote>
+<p>便解开此题，注意：这里使用的单引号：`  应与PHP代码中一致</p>
+<p>关于sql语句注释的使用:在SQL语句中 -- 代表注释一行但是在我们的get语句中为什么注释是 --+ 呢？</p>
+<p>我在网络上CTF大牛的博客上找到了答案：在我们进行sql注入的地方，注释符--后面如果没有空格，就会与单引号或双引号连接形成下面的</p>
+<blockquote>
+<p>--‘</p>
+</blockquote>
+<p>这样的输入，此时sql语句会报错，因为无法识别单引号或双引号的作用，此时+的作用就是代替一个空格使注释变为</p>
+<blockquote>
+<p>-- ‘</p>
+</blockquote>
+<p>这样 ‘ 就被正确注释了</p>
 
       
     </div>
@@ -526,7 +544,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-PHP-LFI"><span class="nav-number">1.</span> <span class="nav-text">1. PHP LFI</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-PHP-0817"><span class="nav-number">2.</span> <span class="nav-text">2. PHP 0817</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-Register-Globals"><span class="nav-number">3.</span> <span class="nav-text">3.Register Globals</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-PHP-LFI"><span class="nav-number">1.</span> <span class="nav-text">1. PHP LFI</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-PHP-0817"><span class="nav-number">2.</span> <span class="nav-text">2. PHP 0817</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-Register-Globals"><span class="nav-number">3.</span> <span class="nav-text">3.Register Globals</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-No-Escape"><span class="nav-number">4.</span> <span class="nav-text">4.No Escape</span></a></li></ol></div>
             
 
           </div>
