@@ -551,6 +551,38 @@
 <p>0xdeadc0de</p>
 </blockquote>
 <p>正好不含有1-9<br>故post 0xdeadc0de 得解</p>
+<h2 id="6-PHP-0819"><a href="#6-PHP-0819" class="headerlink" title="6.PHP 0819"></a>6.<a href="http://www.wechall.net/challenge/space/php0819/index.php" target="_blank">PHP 0819</a></h2><p>我们先看看源码</p>
+<p><img src="/images/PHP_0819.png" alt></p>
+<p>由源代码看出我们需要让eval=’1337’即可解题</p>
+<p>那么先试试</p>
+<blockquote>
+<p>?eval=1337</p>
+</blockquote>
+<p>报错了</p>
+<p><img src="/images/PHP_0819_1.png" alt></p>
+<p>我们注意到函数里有这样一行</p>
+<blockquote>
+<p>eval(“\$spaceone = $f”);</p>
+</blockquote>
+<p>eval()的作用是把括号里的字符串当做PHP代码执行，字符串必须满足PHP代码的语法要求，这次我们加上 ; 结尾试试</p>
+<blockquote>
+<p>?eval=1337;</p>
+</blockquote>
+<p>这次没有报错但什么都没有返回</p>
+<p>注意我们的最后一行代码</p>
+<blockquote>
+<p>return ($spaceone === ‘1337’);</p>
+</blockquote>
+<p>===的存在使得spaceone必须等于字符串：1337 才能给我们返回正确的结果<br><br>首先想到以字符串输入但是代码过滤了’ `两个符号，类型强转(string)也不行，代码第一行’(‘和’)’也被过滤了。<br></p>
+<p>在查找了多种PHP的资料后我学会了一个PHP的技术叫：<i>heredoc</i><br><br>heredoc是PHP引用字符串的一种方式，其用法如下:</p>
+<blockquote>
+<p>$str = &lt;&lt;&lt; s &emsp; &emsp;//需要赋值的变量str，以及一个被 &lt;&lt;&lt; 重定位的标识符 s<br>strings &emsp;&emsp; //需要输入的字符串strings<br>s;&emsp;&emsp;//标识符s以及语句结尾; </p>
+</blockquote>
+<p>那么我们的答案就出来了</p>
+<blockquote>
+<p>?eval=&lt;&lt;&lt;s%0a1337%0as;%0a&emsp;&emsp;//%0a为换行符，结尾必须换行否则报错。</p>
+</blockquote>
+<p>此题得解</p>
 
           
         
