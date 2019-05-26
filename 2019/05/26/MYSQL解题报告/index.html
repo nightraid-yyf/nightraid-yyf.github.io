@@ -79,13 +79,20 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="nightraid_yyf的博客">
-<meta property="og:url" content="http://yoursite.com/archives/2019/03/index.html">
+<meta name="description" content="1. MYSQL 1这题是一道最简单的sql注入,查看源代码可以发现该题没有任何的过滤，下面是有关的sql代码  那么只要让用户名为admin，密码判断为永真就可以实现注入，在用户名处输入如下代码:  admin’ or ‘1’=’1  便解出此题 2. MYSQL 2这题与上一题相同但是增加一段新的代码  该段代码要求我们输入的密码与数据库中返回的密码一致才能完成注入，但是显然我们不知道admi">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MYSQL解题报告">
+<meta property="og:url" content="http://yoursite.com/2019/05/26/MYSQL解题报告/index.html">
 <meta property="og:site_name" content="nightraid_yyf的博客">
+<meta property="og:description" content="1. MYSQL 1这题是一道最简单的sql注入,查看源代码可以发现该题没有任何的过滤，下面是有关的sql代码  那么只要让用户名为admin，密码判断为永真就可以实现注入，在用户名处输入如下代码:  admin’ or ‘1’=’1  便解出此题 2. MYSQL 2这题与上一题相同但是增加一段新的代码  该段代码要求我们输入的密码与数据库中返回的密码一致才能完成注入，但是显然我们不知道admi">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/images/MYSQL1.png">
+<meta property="og:image" content="http://yoursite.com/images/MYSQL2.png">
+<meta property="og:updated_time" content="2019-05-26T11:22:13.117Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="nightraid_yyf的博客">
+<meta name="twitter:title" content="MYSQL解题报告">
+<meta name="twitter:description" content="1. MYSQL 1这题是一道最简单的sql注入,查看源代码可以发现该题没有任何的过滤，下面是有关的sql代码  那么只要让用户名为admin，密码判断为永真就可以实现注入，在用户名处输入如下代码:  admin’ or ‘1’=’1  便解出此题 2. MYSQL 2这题与上一题相同但是增加一段新的代码  该段代码要求我们输入的密码与数据库中返回的密码一致才能完成注入，但是显然我们不知道admi">
+<meta name="twitter:image" content="http://yoursite.com/images/MYSQL1.png">
 
 
 
@@ -115,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/archives/2019/03/">
+  <link rel="canonical" href="http://yoursite.com/2019/05/26/MYSQL解题报告/">
 
 
 
 
 
-  <title>Archive | nightraid_yyf的博客</title>
+  <title>MYSQL解题报告 | nightraid_yyf的博客</title>
   
 
 
@@ -140,7 +147,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -214,142 +221,157 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/26/MYSQL解题报告/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="nightraid_yyf">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="nightraid_yyf的博客">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h1 class="post-title" itemprop="name headline">MYSQL解题报告</h1>
         
+
+        <div class="post-meta">
+			
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-05-26T18:34:53+08:00">
+                2019-05-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-        
-        Um..! 4 posts in total. Keep on posting.
-      </span>
 
-      
-
-        
-        
-        
-
-        
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2019">2019</h1>
-          </div>
-        
-        
+            
+          
 
-        
+          
+          
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+          
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/03/27/信息竞赛/" itemprop="url">
-              
-                <span itemprop="name">信息竞赛</span>
-              
-            </a>
-        
-      </h2>
+          
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-03-27T15:39:38+08:00" content="2019-03-27">
-          03-27
-        </time>
-      </div>
+          
 
-    </header>
-  </article>
+        </div>
+      </header>
+    
 
-
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/03/25/PHP解题报告/" itemprop="url">
-              
-                <span itemprop="name">PHP 解题报告</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-03-25T18:24:50+08:00" content="2019-03-25">
-          03-25
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/03/25/简介/" itemprop="url">
-              
-                <span itemprop="name">简介</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-03-25T12:37:26+08:00" content="2019-03-25">
-          03-25
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+      
+        <h2 id="1-MYSQL-1"><a href="#1-MYSQL-1" class="headerlink" title="1. MYSQL 1"></a>1. <a href="http://www.wechall.net/challenge/training/mysql/auth_bypass1/index.php" target="_blank">MYSQL 1</a></h2><p>这题是一道最简单的sql注入,查看源代码可以发现该题没有任何的过滤，下面是有关的sql代码</p>
+<p><img src="/images/MYSQL1.png" alt></p>
+<p>那么只要让用户名为admin，密码判断为永真就可以实现注入，在用户名处输入如下代码:</p>
+<blockquote>
+<p>admin’ or ‘1’=’1</p>
+</blockquote>
+<p>便解出此题</p>
+<h2 id="2-MYSQL-2"><a href="#2-MYSQL-2" class="headerlink" title="2. MYSQL 2"></a>2. <a href="http://www.wechall.net/challenge/training/mysql/auth_bypass1/index.php" target="_blank">MYSQL 2</a></h2><p>这题与上一题相同但是增加一段新的代码</p>
+<p><img src="/images/MYSQL2.png" alt></p>
+<p>该段代码要求我们输入的密码与数据库中返回的密码一致才能完成注入，但是显然我们不知道admin的密码，首先想到的是修改数据库中的密码<br><br>但是查询了各种资料后发现MYSQL不支持在查询的同时修改数据。</p>
+<p>在三天时间里，我重新看了一下MYSQL的书，在select的查询后面通常都可以跟随一个union select联合查询，我就想能不能用union select来破解此题</p>
+<p>union select 有个很重要的作用:合并查询的结果，那么我们就可以利用这一功能，将一个已知的密码与未知密码合并，来骗过校验，由源码知该表单有三列:(编号，用户名，密码),在用户名处输入如下代码即可解题</p>
+<blockquote>
+<p>123’ union select 1,’admin’,md5(‘123’)</p>
+</blockquote>
+<p>密码栏也输入123</p>
 
       
-
     </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/03/27/信息竞赛/" rel="next" title="信息竞赛">
+                <i class="fa fa-chevron-left"></i> 信息竞赛
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -357,6 +379,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -377,8 +403,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -429,6 +464,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-MYSQL-1"><span class="nav-number">1.</span> <span class="nav-text">1. MYSQL 1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-MYSQL-2"><span class="nav-number">2.</span> <span class="nav-text">2. MYSQL 2</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -562,6 +613,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 

@@ -95,7 +95,7 @@
 <meta property="og:image" content="http://yoursite.com/images/PHP_0818.png">
 <meta property="og:image" content="http://yoursite.com/images/PHP_0819.png">
 <meta property="og:image" content="http://yoursite.com/images/PHP_0819_1.png">
-<meta property="og:updated_time" content="2019-04-15T11:11:17.944Z">
+<meta property="og:updated_time" content="2019-05-26T11:26:57.276Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PHP 解题报告">
 <meta name="twitter:description" content="1. PHP LFI题目要求：调用soulution.php文件本题是PHP中LFI漏洞的利用，漏洞代码如下:  $filename = ‘pages/‘.(isset($_GET[“file”])?$_GET[“file”]:”welcome”).‘.htm’;include $filename;  当服务器端get到file的时候，会去调用file.html并显示；那么我们只要将solutio">
@@ -385,7 +385,7 @@
 </blockquote>
 <p>这样的输入，此时sql语句会报错，因为无法识别单引号或双引号的作用，此时+的作用就是代替一个空格使注释变为</p>
 <blockquote>
-<p>-- ‘</p>
+<p>--&emsp;’</p>
 </blockquote>
 <p>这样 ‘ 就被正确注释了</p>
 <h2 id="5-PHP-0818"><a href="#5-PHP-0818" class="headerlink" title="5.PHP 0818"></a>5.<a href="http://www.wechall.net/challenge/noother/php0818/php0818.php" target="_blank">PHP 0818</a></h2><p>本题是输入一个正确的magic word来获得正解，是对PHP表达式的考察</p>
@@ -541,7 +541,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
