@@ -631,6 +631,149 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/26/C语言网络编程/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="nightraid_yyf">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="nightraid_yyf的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/05/26/C语言网络编程/" itemprop="url">C语言网络编程</a></h1>
+        
+
+        <div class="post-meta">
+			
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-05-26T19:28:23+08:00">
+                2019-05-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><hr>
+<p>c语言网络编程依靠的是套接字服务(SOCKET),该服务包含在头文件</p>
+<blockquote>
+<p>winsock2.h</p>
+</blockquote>
+<p>部分编译器，需要在链接器(linker)中添加lib文件</p>
+<blockquote>
+<p>libws2_32.a</p>
+</blockquote>
+<p>该头文件的使用：</p>
+<h2 id="服务端"><a href="#服务端" class="headerlink" title="服务端"></a>服务端</h2><hr>
+<p>首先需要启动套接字服务WSA，此时用到函数WSAStartup</p>
+<blockquote>
+<p>WSAStartup(WORD,LPWSADATA)<br><br>第一个变量为WORD型记录套接字版本号，可用MAKEWORD(x,x)表示x,x版本<br><br>第二个变量为LPWSADATA型，是指向WSADATA型变量的指针代替，存储套接字版本信息<br><br>用法如下<br><br>WSADATA version_info;<br><br>WSAStartup(MAKEWORD(2,2),&amp;WSADATA);  //启动套接字服务</p>
+</blockquote>
+<p>利用WSACleanup停止该服务</p>
+<blockquote>
+<p>WSACleanup();</p>
+</blockquote>
+<p>启动服务后我们需要申明套接字(SOCKET)</p>
+<blockquote>
+<p>SOCKET Server=socket(int,int,int);</p>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/26/MYSQL解题报告/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -969,7 +1112,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>

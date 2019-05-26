@@ -79,13 +79,17 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="nightraid_yyf的博客">
-<meta property="og:url" content="http://yoursite.com/categories/PHP类/index.html">
+<meta name="description" content="准备 c语言网络编程依靠的是套接字服务(SOCKET),该服务包含在头文件  winsock2.h  部分编译器，需要在链接器(linker)中添加lib文件  libws2_32.a  该头文件的使用： 服务端 首先需要启动套接字服务WSA，此时用到函数WSAStartup  WSAStartup(WORD,LPWSADATA)第一个变量为WORD型记录套接字版本号，可用MAKEWORD(x,x">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C语言网络编程">
+<meta property="og:url" content="http://yoursite.com/2019/05/26/C语言网络编程/index.html">
 <meta property="og:site_name" content="nightraid_yyf的博客">
+<meta property="og:description" content="准备 c语言网络编程依靠的是套接字服务(SOCKET),该服务包含在头文件  winsock2.h  部分编译器，需要在链接器(linker)中添加lib文件  libws2_32.a  该头文件的使用： 服务端 首先需要启动套接字服务WSA，此时用到函数WSAStartup  WSAStartup(WORD,LPWSADATA)第一个变量为WORD型记录套接字版本号，可用MAKEWORD(x,x">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-05-26T11:44:20.200Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="nightraid_yyf的博客">
+<meta name="twitter:title" content="C语言网络编程">
+<meta name="twitter:description" content="准备 c语言网络编程依靠的是套接字服务(SOCKET),该服务包含在头文件  winsock2.h  部分编译器，需要在链接器(linker)中添加lib文件  libws2_32.a  该头文件的使用： 服务端 首先需要启动套接字服务WSA，此时用到函数WSAStartup  WSAStartup(WORD,LPWSADATA)第一个变量为WORD型记录套接字版本号，可用MAKEWORD(x,x">
 
 
 
@@ -115,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/categories/PHP类/">
+  <link rel="canonical" href="http://yoursite.com/2019/05/26/C语言网络编程/">
 
 
 
 
 
-  <title>Category: PHP类 | nightraid_yyf的博客</title>
+  <title>C语言网络编程 | nightraid_yyf的博客</title>
   
 
 
@@ -140,7 +144,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -214,53 +218,164 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block category">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>PHP类<small>Category</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/26/C语言网络编程/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="nightraid_yyf">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="nightraid_yyf的博客">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2019/03/25/PHP解题报告/" itemprop="url">
-              
-                <span itemprop="name">PHP 解题报告</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">C语言网络编程</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-03-25T18:24:50+08:00" content="2019-03-25">
-          03-25
-        </time>
-      </div>
+        <div class="post-meta">
+			
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-05-26T19:28:23+08:00">
+                2019-05-26
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><hr>
+<p>c语言网络编程依靠的是套接字服务(SOCKET),该服务包含在头文件</p>
+<blockquote>
+<p>winsock2.h</p>
+</blockquote>
+<p>部分编译器，需要在链接器(linker)中添加lib文件</p>
+<blockquote>
+<p>libws2_32.a</p>
+</blockquote>
+<p>该头文件的使用：</p>
+<h2 id="服务端"><a href="#服务端" class="headerlink" title="服务端"></a>服务端</h2><hr>
+<p>首先需要启动套接字服务WSA，此时用到函数WSAStartup</p>
+<blockquote>
+<p>WSAStartup(WORD,LPWSADATA)<br><br>第一个变量为WORD型记录套接字版本号，可用MAKEWORD(x,x)表示x,x版本<br><br>第二个变量为LPWSADATA型，是指向WSADATA型变量的指针代替，存储套接字版本信息<br><br>用法如下<br><br>WSADATA version_info;<br><br>WSAStartup(MAKEWORD(2,2),&amp;WSADATA);  //启动套接字服务</p>
+</blockquote>
+<p>利用WSACleanup停止该服务</p>
+<blockquote>
+<p>WSACleanup();</p>
+</blockquote>
+<p>启动服务后我们需要申明套接字(SOCKET)</p>
+<blockquote>
+<p>SOCKET Server=socket(int,int,int);</p>
+</blockquote>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/05/26/MYSQL解题报告/" rel="next" title="MYSQL解题报告">
+                <i class="fa fa-chevron-left"></i> MYSQL解题报告
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -268,6 +383,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -288,8 +407,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -340,6 +468,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#准备"><span class="nav-number">1.</span> <span class="nav-text">准备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#服务端"><span class="nav-number">2.</span> <span class="nav-text">服务端</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -473,6 +617,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
